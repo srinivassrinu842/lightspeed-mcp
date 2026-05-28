@@ -1,0 +1,23 @@
+﻿{
+  "mcpServers": {
+    "lightspeed-mcp": {
+      "type": "stdio",
+      "command": "podman",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--env",
+        "LIGHTSPEED_CLIENT_ID",
+        "--env",
+        "LIGHTSPEED_CLIENT_SECRET",
+        "quay.io/redhat-services-prod/insights-management-tenant/insights-mcp/red-hat-lightspeed-mcp:latest",
+        "--all-tools"
+      ],
+      "env": {
+        "LIGHTSPEED_CLIENT_ID": "${env:LIGHTSPEED_CLIENT_ID}",
+        "LIGHTSPEED_CLIENT_SECRET": "${env:LIGHTSPEED_CLIENT_SECRET}"
+      }
+    }
+  }
+}
